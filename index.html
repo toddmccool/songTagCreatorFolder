@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example</title>
+    <script>
+      function addAnchorTags() {
+        // Get the input text from the text box
+        var inputText = document.getElementById("input").value;
+
+        // Get the desired URL from the URL box
+        var desiredURL = document.getElementById("url").value;
+
+        // Split the input text into an array of song titles
+        var songTitles = inputText.split("\n");
+
+        // Create an empty array to hold the anchor tags
+        var anchorTags = [];
+
+        // Loop through the song titles and create an anchor tag with the desired URL for each one
+        for (var i = 0; i < songTitles.length; i++) {
+          var songTitle = songTitles[i].trim();
+          if (songTitle !== "") {
+            var anchorTag =
+              "<a href='" + desiredURL + "'>" + songTitle + "</a>";
+            anchorTags.push(anchorTag);
+            anchorTags.push("<br>");
+          }
+        }
+
+        // Join the anchor tags with line breaks
+        var outputText = anchorTags.join("\n");
+
+        // Update the content of the output element with the resulting anchor tags
+        document.getElementById("output").value = outputText;
+      }
+    </script>
+  </head>
+  <body>
+    <textarea
+      id="input"
+      placeholder="Enter song titles here, separated by line breaks"
+    ></textarea>
+    <input type="text" id="url" placeholder="Enter desired URL here" />
+    <button onclick="addAnchorTags()">Add Anchor Tags</button>
+    <br />
+    <textarea id="output" rows="10" cols="50"></textarea>
+  </body>
+</html>
