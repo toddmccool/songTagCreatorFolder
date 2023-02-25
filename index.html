@@ -23,6 +23,7 @@
           if (songTitle !== "") {
             var anchorTag =
               "<a href='" + desiredURL + "'>" + songTitle + "</a>";
+            anchorTags.unshift("<br>");
             anchorTags.push(anchorTag);
             anchorTags.push("<br>");
           }
