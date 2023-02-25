@@ -22,10 +22,9 @@
           var songTitle = songTitles[i].trim();
           if (songTitle !== "") {
             var anchorTag =
-              "<a href='" + desiredURL + "'>" + songTitle + "</a>";
-            anchorTags.unshift("<br>");
+              "<br><a href='" + desiredURL + "'>" + songTitle + "</a><br>\n";
+
             anchorTags.push(anchorTag);
-            anchorTags.push("<br>");
           }
         }
 
